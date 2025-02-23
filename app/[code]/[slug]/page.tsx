@@ -1,10 +1,10 @@
 "use cache";
-
 import { lightThemeFlag, precomputeFlags } from "@/libs/flags";
 
 type Props = {
   params: Promise<{ slug: string; code: string }>;
 };
+
 export async function generateStaticParams() {
   return [];
 }
