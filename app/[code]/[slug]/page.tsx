@@ -10,10 +10,15 @@ export async function generateStaticParams() {
 }
 
 const SlugPage = async ({ params }: Props) => {
-  const { code } = await params;
+  const { code, slug } = await params;
+  console.log("==> code", code, slug);
   const lightTheme = await lightThemeFlag(code, precomputeFlags);
 
-  return <div>SlugPage: {lightTheme}</div>;
+  return (
+    <div>
+      SlugPage: {slug} {code} {lightTheme}
+    </div>
+  );
 };
 
 export default SlugPage;
