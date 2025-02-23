@@ -11,12 +11,12 @@ export async function generateStaticParams() {
 
 const SlugPage = async ({ params }: Props) => {
   const { code, slug } = await params;
-  console.log("==> code", code, slug);
   const lightTheme = await lightThemeFlag(code, precomputeFlags);
+  console.log("==> SlugPage", { lightTheme, slug, code });
 
   return (
     <div>
-      SlugPage: {slug} {code} {lightTheme}
+      SlugPage: {slug} {lightTheme ? "true" : "false"} {code}
     </div>
   );
 };
