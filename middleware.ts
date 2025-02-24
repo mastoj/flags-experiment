@@ -14,7 +14,6 @@ const getUrl = (request: NextRequest, code: string, pathOverride?: string) =>
 // This function can be marked `async` if using `await` inside
 export async function middleware(request: NextRequest) {
   const code = await precompute(precomputeFlags);
-  console.log("==> code", code, request.nextUrl.pathname);
   const url = getUrl(request, code);
   return NextResponse.rewrite(url, { request });
 }
